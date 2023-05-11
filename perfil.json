@@ -1,0 +1,23 @@
+[
+    {
+        "nombre": "Maria",
+        "nick": "maria",
+        "edad": "34",
+        "genero": "Femenino",
+        "imagen": "D:\\facultad\\python\\imagenPerfil\\finland\bill.png"
+    },
+    {
+        "nombre": "Juan",
+        "nick": "juan",
+        "edad": "12",
+        "genero": "Masculino",
+        "imagen": "D:\\facultad\\python\\imagenPerfil\\jake.png"
+    },
+    {
+        "nombre": "Ana",
+        "nick": "Ana",
+        "edad": "60",
+        "genero": "Femenino",
+        "imagen": "D:\\facultad\\python\\imagenPerfil\\jake.png"
+    }
+]
