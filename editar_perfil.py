@@ -43,8 +43,8 @@ class EditarPerfil():
             sg.Button("Siguiente", key="-sig-", pad=((30,0), (50,0))),],
             [sg.Button("guardar", font=('Helvetica', 12), pad=((200, 0), (50, 0)), size=(20, 2))],]
         
-        column1 = sg.Column(column1_layout, size=(175,600), background_color="white")
-        column2 = sg.Column(column2_layout, size=(415, 600), background_color="white", key='-column2-')
+        column1 = sg.Column(column1_layout, background_color="white")
+        column2 = sg.Column(column2_layout, background_color="white", key='-column2-')
         layout = [[column1, column2]]
         self.window = sg.Window("UNLP Image", layout, background_color='white', size=(800,600))
     def EncontrarPerfil(self,perfil_actual):
