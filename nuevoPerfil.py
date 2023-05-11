@@ -79,13 +79,13 @@ def iniciar_ventana(self):
                     "imagen": imagen_lista[indice]
                 }
                 perfil_actual=values[1]
-                if os.path.exists('perfil.json'):
-                    with open('perfil.json', "r") as f:
+                if os.path.exists('perfiles.json'):
+                    with open('perfiles.json', "r") as f:
                         perfiles = json.load(f)
                 else:
                     perfiles = []
                 perfiles.append(data)
-                with open('perfil.json', "w") as f:
+                with open('perfiles.json', "w") as f:
                     json.dump(perfiles, f, indent=4)
                 break
         elif event == "<    volver" or event == sg.WIN_CLOSED:
