@@ -38,9 +38,11 @@ class EditarPerfil():
 
 def EncontrarPerfil(perfil_actual):
     for perfil in datos:
-            if (perfil['nick'] == perfil_actual['nick']):
+            if (perfil['nick'] == perfil_actual):
                 perfil_encontrado = perfil
+                return perfil_encontrado
                 break
+                
 def mostrar_imagen(imagen,self,event):
     img = Image.open(imagen[indice])
     bio = io.BytesIO()
@@ -54,10 +56,7 @@ def iniciar_ventana(self,perfil_actual):
         event, values = self.read()
         
         if event == 'guardar':
-            for i, perfil in enumerate(datos):
-                if perfil['nick'] == perfil_actual['nick']:
-                    datos[i] = perfil_encontrado
-                    break
+            datos=EncontrarPerfil(perfil_actual)
             with open('perfil.json', 'w') as f:
                 json.dump(datos, f, indent=4 )
                 print("se actualizo")
