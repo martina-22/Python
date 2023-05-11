@@ -13,7 +13,7 @@ class EditarPerfil():
         perfil_encontrado=None
         indice=0    
         current_dir = os.path.abspath(__file__)
-        relative_path = "imagenPerfil"
+        relative_path = "icons"
         imagen_lista = os.path.join('./', relative_path)
         with open('perfil.json', 'r') as archivo: 
             self.datos = json.load(archivo)
