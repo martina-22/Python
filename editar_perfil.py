@@ -9,7 +9,7 @@ import inicio_ventana
 perfil_encontrado=None
 indice=0    
 current_dir = os.path.abspath(__file__)
-relative_path = "icons\\icon_add.png"
+relative_path = "imagenPerfil"
 imagen_lista = os.path.join('./', relative_path)
 
 
