@@ -15,7 +15,7 @@ class EditarPerfil():
         current_dir = os.path.abspath(__file__)
         relative_path = "icons"
         imagen_lista = os.path.join('./', relative_path)
-        with open('perfil.json', 'r') as archivo: 
+        with open('perfiles.json', 'r') as archivo: 
             self.datos = json.load(archivo)
         perfil_encontrado=self.EncontrarPerfil(perfil_actual)
         column1_layout = [
@@ -69,7 +69,7 @@ class EditarPerfil():
                 break
             if event == 'guardar':
                 datos=self.EncontrarPerfil(perfil_actual)
-                with open('perfil.json', 'w') as f:
+                with open('perfiles.json', 'w') as f:
                     json.dump(datos, f, indent=4 )
                     print("se actualizo")
                     break
