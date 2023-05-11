@@ -14,30 +14,31 @@ perfil_actual=None
 class NuevoPerfil:
     def __init__(self):
         
-        column1 = [
-            [sg.Text("Nuevo Perfil", pad=((30, 0), (0, 50)), font=('Helvetica', 20))],
-            [sg.Text("Ingresa tu nombre:", pad=((80, 0), (20, 0)), font=('Helvetica', 15))],
+        column1_layout = [
+            [sg.Text("Nuevo Perfil", pad=((30, 0), (0, 50)), font=('Helvetica', 20),,background_color='white',text_color='black')],
+            [sg.Text("Ingresa tu nombre:", pad=((80, 0), (20, 0)), font=('Helvetica', 15),,background_color='white',text_color='black')],
             [sg.InputText('', pad=((80, 0), (0, 10)), size=(20, 1), font=('Helvetica', 15))],
-            [sg.Text("Ingresa tu nick o alias:", pad=((80, 0), (20, 0)), font=('Helvetica', 15))],
+            [sg.Text("Ingresa tu nick o alias:", pad=((80, 0), (20, 0)), font=('Helvetica', 15),,background_color='white',text_color='black')],
             [sg.InputText('', pad=((80, 0), (0, 10)), size=(20, 1), font=('Helvetica', 15))],
-            [sg.Text("Ingresa tu edad:", pad=((80, 0), (10, 0)), font=('Helvetica', 15))],
+            [sg.Text("Ingresa tu edad:", pad=((80, 0), (10, 0)), font=('Helvetica', 15),background_color='white',text_color='black')],
             [sg.InputText('', pad=((80, 0), (0, 10)), size=(20, 1), font=('Helvetica', 15))],
-            [sg.Text('Género autopercibido:', pad=((80, 0), (10, 0)), font=('Helvetica', 15))],
+            [sg.Text('Género autopercibido:', pad=((80, 0), (10, 0)), font=('Helvetica', 15),background_color='white',text_color='black')],
             [sg.Combo(['Masculino', 'Femenino','Otro'], key='genero', pad=((80, 0), (10, 0)), font=('Helvetica', 15))],
         ]
 
-        column2 = [
+        column2_layout = [
             [sg.Button("<   volver", font=('Helvetica', 12), pad=((300, 0), (0, 150)), size=(20, 2))],
             [sg.Image(imagen_lista[indice], key='image_perfil', pad=((150,0), (0,0)))],
             [sg.Button("Anterior", key="-ant-",pad=((140,0), (50,0))),
             sg.Button("Siguiente", key="-sig-", pad=((30,0), (50,0))),],
-            [sg.Text('', size=(30, 1), pad=((0, 0), 20))],
             [sg.Button("guardar", font=('Helvetica', 12), pad=((300, 0), (50, 0)), size=(20, 2))],
         ]
 
-        layout = [
-            [sg.Column(column1), sg.Column(column2)],
-        ]
+        column1 = sg.Column(column1_layout, size=(175,600), background_color="white")
+        column2 = sg.Column(column2_layout, size=(415, 600), background_color="white", key='-column2-')
+
+        layout = [[column1, column2]]
+
         self.window = sg.Window("UNLP Image", layout, background_color='white', size=(800,600))
         
 def mostrar_imagen(imagen,self,event):
